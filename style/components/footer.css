@@ -1,0 +1,72 @@
+footer {
+    font-family: "Poppins", sans-serif;
+    height: 400px;
+    background-color: #032e15;
+    color: white;
+    padding-block: 100px;
+    padding-inline: 112px;
+    display: flex;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: space-between;
+    align-items: start;
+}
+
+.footer-content {
+    width: 400px;
+}
+
+.footer-content h1 {
+    font-size: 30px;
+    padding-bottom: 12px;
+    font-weight: 600;
+}
+
+.nav-list {
+    margin-left: 120px;
+}
+
+.nav-list ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 12px;
+}
+
+.nav-list ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-list h1 {
+    font-size: 18px;
+    padding-bottom: 12px;
+    font-weight: 600;
+}
+
+.sosmed-list {
+    margin-right: 120px;
+}
+
+.sosmed-list ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 12px
+}
+
+.sosmed-list ul li a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.sosmed-list h1 {
+    font-size: 18px;
+    padding-bottom: 12px;
+    font-weight: 600;
+}
+
+.sosmed-list ul li a img {
+    width: 24px;
+    margin-right: 10px;
+}
