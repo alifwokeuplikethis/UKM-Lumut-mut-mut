@@ -6,15 +6,16 @@
 
 body {
 	font-family: 'Poppins', sans-serif;
-	background: linear-gradient(50deg,
-			oklch(from oklch(var(--bg)) 70% c h),
-			oklch(from oklch(var(--bg)) 90% c h));
+	/* background: linear-gradient(50deg,
+	oklch(from oklch(var(--bg)) 70% c h),
+	oklch(from oklch(var(--bg)) 90% c h)); */
 }
 
 .hero {
 	margin-top: 140px;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	display: flex;
+	margin-right: 60px;
 	padding-block: 60px;
 	padding-inline: 80px;
 	justify-content: space-between;
@@ -33,12 +34,13 @@ body {
 }
 
 .hero-h1 p {
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 20px;
 }
 
 .hero img {
 	width: 600px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.089);
 }
 
 .section-hero {
@@ -54,56 +56,16 @@ body {
 }
 
 .section-hero img {
-	width: 600px;
+	width:600px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.089);
 }
 
 .hero-h2 h1 {
 	font-weight: 700;
 	padding-bottom: 12px;
 	font-size: 30px;
+	text-align: justify;
 }
-
-/* Carousel */
-
-/* .carousel {
-    display: flex;
-    margin: 100px auto;
-    width: 90%;
-    overflow-x: auto;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.group  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    animation: spin 5s infinite linear;
-    -webkit-animation: spin 8s infinite linear;
-    padding-right: 1em;
-}
-
-.card {
-    flex: 0 0 5em;
-    height: 5em;
-    padding: 1em;
-    background: cornflowerblue;
-    font-size: 3em;
-    text-align: center;
-    align-content: center;
-}
-
-@keyframes spin {
-    from {
-        translate: 0;
-    }
-    to {
-        translate: -100%;
-    }
-} */
 
 :root {
 	--bg: 25% 0.0075 70;
@@ -128,6 +90,10 @@ body {
 	place-content: center;
 
 	height: 100%;
+
+		background: linear-gradient(50deg,
+	oklch(from oklch(var(--bg)) 90% c h),
+	oklch(from oklch(var(--bg)) 90% c h));
 
 	/* fade out other cards when one is :hover/:focus-within */
 	&:has(:hover, :focus-within) {
@@ -217,7 +183,6 @@ body {
 	}
 
 	&:focus-within {
-		--shadow-color: oklch(var(--pink));
 		z-index: 5;
 	}
 
@@ -284,10 +249,20 @@ body {
 } */
 
 .section-2 {
+			background: linear-gradient(50deg,
+	oklch(from oklch(var(--bg)) 90% c h),
+	oklch(from oklch(var(--bg)) 90% c h));
 	/* border: 1px solid red; */
-	margin-top: 40px;
-	margin-bottom: 20px;
+	padding-top: 80px;
+	padding-bottom: 60px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+.section-2 h1 {
+	font-size: 30px;
+	font-weight: 600;
+	/* border: 1px solid red; */
+}
+

@@ -3,7 +3,7 @@ header {
     margin-inline: 200px;
     position: fixed;
     padding: 36px;
-    background-color: rgba(255, 255, 255, 0.449);
+    background-color: rgba(255, 255, 255, 0.548);
     top: 20px;
     left: 0px;
     right: 0px;
@@ -46,5 +46,13 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
+    color: #000;
+}
+
+header nav ul li a:hover {
+    color: #4d4d4d;
+}
+
+header nav ul li a:active {
     color: #000;
 }
