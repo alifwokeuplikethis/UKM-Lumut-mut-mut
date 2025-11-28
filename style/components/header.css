@@ -3,13 +3,17 @@ header {
     margin-inline: 200px;
     position: fixed;
     padding: 36px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.449);
     top: 20px;
     left: 0px;
     right: 0px;
     z-index: 50;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.089);
     border-radius: calc(infinity * 1px);
+
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header nav {
