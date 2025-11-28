@@ -60,15 +60,44 @@ body {
     font-size: 30px;
 }
 
-.section-2 {
-    border: 1px solid black;
-    margin-bottom: 700px;
+/* Carousel */
+
+.carousel {
+    display: flex;
+    margin: 100px auto;
+    width: 90%;
+    overflow-x: auto;
 }
 
-.section-2 h1 {
-    font-weight: 700;
-    padding-block: 60px;
-    padding-inline: 80px;
-    font-size: 35px;
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.group  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 5s infinite linear;
+    -webkit-animation: spin 8s infinite linear;
+    padding-right: 1em;
+}
+
+.card {
+    flex: 0 0 5em;
+    height: 5em;
+    padding: 1em;
+    background: cornflowerblue;
+    font-size: 3em;
     text-align: center;
+    align-content: center;
+}
+
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100%;
+    }
 }
