@@ -3,3 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+banner-program {
+    width: 100%;
+    height: 400px;
+    background-image: url(program.png);
+    background-color: #032e15;
+    background-position: center;
+    background-size: fill;
+    background-repeat: no-repeat;
+}
