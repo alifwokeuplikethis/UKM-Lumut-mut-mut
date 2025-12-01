@@ -1,5 +1,351 @@
+ @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+ :root{
+    --bg:#f5fbf6;
+    --card:#ffffff;
+    --accent:#1A5E20;
+    --nama-anggota:#FAFAFA;
+    --bg-nama-anggota:#B87C4C;
+    --shadow: 0 6px 16px rgba(10,10,10,0.08);
+    --color: #3c3163;
+    --transition-time: 0.5s;
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+a {
+  color: inherit;
+}
+
+.cards-wrapper {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.card {
+  font-family: 'Heebo';
+  --bg-filter-opacity: 0.5;
+  background-image: var(--bg-img);
+  background-size: cover;
+  transition: background-image .3s ease;
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  align-items: flex-end;
+  background-position: center;
+  box-shadow: 0 0 3em -1em rgb(0, 0, 0);
+  transition: all var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ffffff;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: rotate(0);
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  transform: translateY(-10px);
+}
+
+.card p {
+  font-size: 0.75em;
+  font-family: 'Open Sans';
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+.card .tags {
+  display: flex;
+}
+
+
+.card:hover .tags .tag {
+  color: white;
+} 
+.card .tags .tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all, var(--transition-time);
+}
+.card .tags .tag .tengs {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 0.35s ease, opacity 0.25s ease;
+}
+
+.card .tags .tag .tengs.show {
+  max-width: 200px; /* nilai besar supaya cukup, tidak makan space */
+  opacity: 1;
+}
+
+.card .tags .tag img {
+  display: inline-block;
+  transform: rotate(-45deg) translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card .tags .tag img.arrow-animate {
+  transform: rotate(0deg) translateX(6px);
+}
+
+.card > div {
+  transform: translateY(-20px); 
+  z-index: 3;
+}
+
+
+
+.card:before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.45); /* overlay hitam */
+  opacity:0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: var(--transition-time);
+  pointer-events: none; /* penting */
+  z-index: 2;
+}
+
+.card:after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image: var(--hover-img);
+  background-size: cover;
+  background-position: center;
+  opacity:0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: var(--transition-time);
+  pointer-events: none; /* penting */
+  z-index: 1;
+}
+
+.card:hover {
+  color: var(--color);
+}
+.card:hover:after{
+  opacity: 1;
+}
+.card:hover:before, .card:hover:after {
+  transform: scale(1);
+  opacity: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+}
+
+.info img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* overlay gelap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  background-color: #ffffff;       /* putih bersih */
+  border-radius: 12px;             /* sudut membulat */
+  padding: 2rem;                   /* ruang di dalam */
+  max-width: 500px;                /* lebar maksimal */
+  width: 90%;                       /* responsif */
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25); /* shadow elegan */
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+/* tampil saat modal diaktifkan */
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* judul modal */
+.modal-content h2 {
+  margin-top: 0;
+  color: #1A5E20;                  /* warna hijau aksen */
+  font-size: 1.5rem;
+}
+
+/* isi modal */
+.modal-content p {
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #1A5E20;
+}
+
+
+
+
+
+
+
+/* NODE (kotak orang) */
+.tree-node {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px;
+  min-width: 300px;
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--accent);
+  display: inline-block;
+  transition: 0.25s;
+}
+.tree-node img{
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+.tree-node:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.32);
+}
+
+.tree-node h3 {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+
+.tree-node p {
+  color: var(--nama-anggota);
+  background-color: var(--bg-nama-anggota);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;  
+  height: 30px;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.struktur-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+}
+
+/* matikan semua garis dari .tree */
+.tree,
+.tree * {
+  all: unset;
+}
+
+.flower {
+  position: absolute;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s ease;
+  z-index: 1;
+}
+
+.flower-left {
+  transform: translateX(-20px);
+}
+
+.flower-right {
+  transform: translateX(20px) scaleX(-1);
+}
+
+.main-photo {
+  position: relative;
+  z-index: 3;
+}
+
+.image-row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
