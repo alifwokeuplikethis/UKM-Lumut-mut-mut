@@ -11,8 +11,8 @@ body {
 /* BANNER */
 .program-banner {
   width: 100%;
-  height: 600px;
-  margin-top: 150px;
+  height: 700px;
+  margin-top: 0px;
   background-image: url('/assets/program.png');
   background-size: cover;
   background-position: center;
@@ -25,13 +25,22 @@ body {
   position: relative;
 }
 
+.program-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
 .program-banner-content {
   text-align: center;
   color: white;
   padding: 20px 40px;
-
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 15px;
+  z-index: 2;
 }
 
 .program-banner-content h1 {
@@ -57,8 +66,6 @@ body {
     font-size: 16px;
   }
 }
-
-
 
 /* CARD */
 .program-card {
