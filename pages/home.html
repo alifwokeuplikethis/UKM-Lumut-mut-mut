@@ -1,40 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="header"></div>
 
     <div class="hero">
-        <div class="hero-h1">
-            <h1>Welcome to UKM Lumut</h1>
-            <p>Seni adalah hidupku-hidupku adalah seni</p>
-        </div>
-        <img src="/assets/art.jpg" alt="">
-    </div>
-    
-    <div class="section-hero">
-        <img src="/assets/art.jpg" alt="">
-        <div class="hero-h2">
-            <h1>What is UKM Lumut</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem molestiae esse temporibus, ullam eveniet delectus asperiores laudantium ex, voluptate sequi dolores illum commodi deleniti deserunt! Ex culpa cupiditate inventore doloribus.</p>
-        </div>
+      <div class="hero-h1">
+        <h1>Welcome to UKM Lumut</h1>
+        <p>Seni adalah hidupku-hidupku adalah seni</p>
+      </div>
     </div>
 
-    <div class="section-2">
-        <h1>Section 2</h1>
+    <div class="section-hero">
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="/assets/dance-1.png" alt="Dance" />
+          <img src="/assets/lukis-1.png" alt="Lukis" />
+          <img src="/assets/lukis-1.png" alt="Lukis" />
+        </div>
+        <button id="prevBtn" class="carousel-btn prev-btn">&#10094;</button>
+        <button id="nextBtn" class="carousel-btn next-btn">&#10095;</button>
+      </div>
+      <div class="hero-h2">
+        <h1>What is UKM Lumut</h1>
+        <p>
+          Merupakan singkatan dari Unit Kegiatan Mahasiswa Lukis, Musik, dan,
+          Tari. UKM Lumut ini diresmikan pada tanggal 20 Juni 1996. Kata “LUMUT”
+          merupakan akronim dari 3 bidang yaitu, Lukis, Musik, dan Tari.
+        </p>
+        <a href="/pages/tentang.html" class="btn-about">Selengkapnya</a>
+      </div>
     </div>
-    
+
+    <div class="section-divisions">
+      <h1>Divisi Kami</h1>
+      <div class="divisions-container">
+        <div class="division-card">
+          <img src="/assets/art.jpg" alt="Seni Rupa" />
+          <h3>Lukis</h3>
+          <p>Melukis, menggambar, dan kriya.</p>
+        </div>
+        <div class="division-card">
+          <img src="/assets/art.jpg" alt="Seni Musik" />
+          <h3>Musik</h3>
+          <p>Vokal, instrumen, dan band.</p>
+        </div>
+        <div class="division-card">
+          <img src="/assets/art.jpg" alt="Seni Tari" />
+          <h3>Tari</h3>
+          <p>Tari tradisional dan modern.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section-3">
+      <div>
+        <h1>PRESTASI</h1>
+      </div>
+    </section>
+
+    <!-- <div class="section-join">
+      <div class="join-content">
+        <h1>Bergabunglah Bersama Kami!</h1>
+        <p>
+          Salurkan bakat senimu dan berkarya bersama keluarga besar UKM Lumut.
+        </p>
+        <button class="btn-join">Daftar Sekarang</button>
+      </div>
+    </div> -->
+
     <div id="footer"></div>
     <script src="/main.js"></script>
-</body>
-
+  </body>
 </html>

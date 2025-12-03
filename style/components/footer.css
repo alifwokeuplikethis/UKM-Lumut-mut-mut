@@ -1,72 +1,120 @@
 footer {
-    font-family: "Poppins", sans-serif;
-    height: 400px;
-    background: linear-gradient(64deg, #021D08, #003D3B);
-    color: white;
-    padding-block: 100px;
-    padding-inline: 112px;
-    display: flex;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-content: space-between;
-    align-items: start;
+  font-family: "Poppins", sans-serif;
+  height: 400px;
+  background-color: #032e15;
+  color: white;
+  padding-block: 100px;
+  padding-inline: 112px;
+  display: flex;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: space-between;
+  align-items: start;
 }
 
 .footer-content {
-    width: 400px;
+  width: 400px;
 }
 
 .footer-content h1 {
-    font-size: 30px;
-    padding-bottom: 12px;
-    font-weight: 600;
+  font-size: 30px;
+  padding-bottom: 12px;
+  font-weight: 600;
+}
+
+.footer-content p {
+  font-size: 16px;
+  text-align: justify;
 }
 
 .nav-list {
-    margin-left: 120px;
+  margin-left: 120px;
 }
 
 .nav-list ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 12px;
 }
 
 .nav-list ul li a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .nav-list h1 {
-    font-size: 18px;
-    padding-bottom: 12px;
-    font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 12px;
+  font-weight: 600;
 }
 
 .sosmed-list {
-    margin-right: 120px;
+  margin-right: 120px;
 }
 
 .sosmed-list ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 12px
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 12px;
 }
 
 .sosmed-list ul li a {
-    display: flex;
-    text-decoration: none;
-    color: white;
+  display: flex;
+  text-decoration: none;
+  color: white;
 }
 
 .sosmed-list h1 {
-    font-size: 18px;
-    padding-bottom: 12px;
-    font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 12px;
+  font-weight: 600;
 }
 
 .sosmed-list ul li a img {
-    width: 24px;
-    margin-right: 10px;
+  width: 24px;
+  margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+  footer {
+    padding-inline: 40px;
+    padding-block: 60px;
+  }
+
+  .footer-content {
+    width: 300px;
+  }
+
+  .nav-list {
+    margin-left: 40px;
+  }
+
+  .sosmed-list {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding-inline: 20px;
+    padding-block: 50px;
+    gap: 40px;
+  }
+
+  .footer-content {
+    width: 100%;
+  }
+
+  .nav-list {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sosmed-list {
+    margin-right: 0;
+    width: 100%;
+  }
 }
