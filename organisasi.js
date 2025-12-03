@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.card');
 const closeButtons = document.querySelectorAll('.modal-close');
+const elements = document.querySelectorAll(".slide-up");
 
 // Fungsi untuk buka modal
 function openModal(modalId) {
@@ -50,6 +51,19 @@ document.querySelectorAll('.modal').forEach(modal => {
     if (e.target === modal) closeModal(modal);
   });
 });
+
+
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+elements.forEach((el) => observer.observe(el));
 
 
 

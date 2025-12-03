@@ -1,61 +1,71 @@
- @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
- :root{
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+:root{
     --bg:#f5fbf6;
     --card:#ffffff;
     --accent:#1A5E20;
-    --nama-anggota:#FAFAFA;
-    --bg-nama-anggota:#B87C4C;
+    --nama-anggota:#000000;
+    --bg-nama-anggota:#1dcd43;
     --shadow: 0 6px 16px rgba(10,10,10,0.08);
-    --color: #3c3163;
+    --color: #ffffff;
     --transition-time: 0.5s;
-  }
+}
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    box-sizing: border-box;
 }
-
-
 
 a {
   color: inherit;
 }
 
 .cards-wrapper {
-  padding-top: 180px;
-  padding-bottom: 180px;
+  padding: 180px 0;
   display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  width: max-content;
 }
 
+@media (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* CARD */
 .card {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: var(--bg-img);
   background-size: cover;
-  transition: background-image .3s ease;
+  background-position: center;
   height: 20em;
   width: 15em;
   font-size: 1.5em;
-  color: white;
+  color: #4CAF50;
   border-radius: 1em;
   padding: 1em;
   display: flex;
   align-items: flex-end;
-  background-position: center;
+  text-decoration: none;
   box-shadow: 0 0 3em -1em rgb(0, 0, 0);
-  transition: all var(--transition-time);
   position: relative;
   overflow: hidden;
   border: 10px solid #ffffff;
-  text-decoration: none;
+  transition: all var(--transition-time);
 }
 
 .card:hover {
@@ -63,8 +73,8 @@ a {
 }
 
 .card h1 {
-  margin: 0;
   font-size: 1.5em;
+  margin: 0;
   line-height: 1.2em;
   transform: translateY(-10px);
 }
@@ -76,37 +86,37 @@ a {
   line-height: 2em;
 }
 
+/* Tags */
 .card .tags {
   display: flex;
 }
 
-
-.card:hover .tags .tag {
-  color: white;
-} 
 .card .tags .tag {
   display: flex;
   align-items: center;
   gap: 4px;
-  transition: all, var(--transition-time);
+  transition: var(--transition-time);
 }
+
 .card .tags .tag .tengs {
   max-width: 0;
+  opacity: 0;
   overflow: hidden;
   white-space: nowrap;
-  opacity: 0;
   transition: max-width 0.35s ease, opacity 0.25s ease;
 }
 
 .card .tags .tag .tengs.show {
-  max-width: 200px; /* nilai besar supaya cukup, tidak makan space */
+  max-width: 200px;
   opacity: 1;
 }
 
+/* Arrow anim */
 .card .tags .tag img {
-  display: inline-block;
-  transform: rotate(-45deg) translateX(0);
-  transition: transform 0.3s ease-in-out;
+  transform: rotate(-45deg);
+  transition: 0.3s ease-in-out;
+  width: 50px;
+  height: 38px;
 }
 
 .card .tags .tag img.arrow-animate {
@@ -114,28 +124,12 @@ a {
 }
 
 .card > div {
-  transform: translateY(-20px); 
+  transform: translateY(-20px);
   z-index: 3;
 }
 
-
-
-.card:before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.45); /* overlay hitam */
-  opacity:0;
-  transform: scale(0);
-  transform-origin: top left;
-  transition: var(--transition-time);
-  pointer-events: none; /* penting */
-  z-index: 2;
-}
-
+/* Overlay */
+.card:before,
 .card:after {
   content:"";
   position:absolute;
@@ -143,32 +137,36 @@ a {
   left:0;
   width:100%;
   height:100%;
-  background-image: var(--hover-img);
-  background-size: cover;
-  background-position: center;
   opacity:0;
   transform: scale(0);
   transform-origin: top left;
   transition: var(--transition-time);
-  pointer-events: none; /* penting */
+  pointer-events: none;
+}
+
+.card:before {
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+.card:after {
+  background-image: var(--hover-img);
+  background-size: cover;
+  background-position: center;
   z-index: 1;
 }
 
 .card:hover {
   color: var(--color);
 }
-.card:hover:after{
+
+.card:hover:before,
+.card:hover:after {
   opacity: 1;
-}
-.card:hover:before, .card:hover:after {
   transform: scale(1);
-  opacity: 1;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-
+/* HEADER INFO */
 .info {
   font-size: 1.2em;
   display: flex;
@@ -181,30 +179,18 @@ a {
   margin-right: 0.5em;
 }
 
-.info h1 {
-  font-size: 1em;
-  font-weight: normal;
-}
-
-
-
-
-
-
-
+/* MODAL */
+/* MODAL */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* overlay gelap */
+  inset: 0;
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
   z-index: 1000;
 }
 
@@ -212,38 +198,23 @@ a {
   opacity: 1;
   pointer-events: auto;
 }
+
 .modal-content {
-  background-color: #ffffff;       /* putih bersih */
-  border-radius: 12px;             /* sudut membulat */
-  padding: 2rem;                   /* ruang di dalam */
-  max-width: 500px;                /* lebar maksimal */
-  width: 90%;                       /* responsif */
-  box-shadow: 0 12px 32px rgba(0,0,0,0.25); /* shadow elegan */
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 900px; /* ditambah sedikit agar muat gambar */
+  width: 90%;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
   transform: scale(0.8);
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: 0.3s ease;
   position: relative;
 }
 
-/* tampil saat modal diaktifkan */
 .modal.show .modal-content {
   transform: scale(1);
   opacity: 1;
-}
-
-/* judul modal */
-.modal-content h2 {
-  margin-top: 0;
-  color: #1A5E20;                  /* warna hijau aksen */
-  font-size: 1.5rem;
-}
-
-/* isi modal */
-.modal-content p {
-  color: #333333;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 1rem;
 }
 
 .modal-close {
@@ -251,24 +222,38 @@ a {
   top: 12px;
   right: 16px;
   font-size: 1.2rem;
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
   color: #999;
-  transition: color 0.2s ease;
 }
 
-.modal-close:hover {
-  color: #1A5E20;
+/* FLEX isi modal */
+.modal-body {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.modal-img img {
+  width: 230px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .modal-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .modal-img img {
+    width: 100%;
+  }
 }
 
 
-
-
-
-
-
-/* NODE (kotak orang) */
+/* STRUKTUR PENGURUS */
 .tree-node {
   background: var(--card);
   border-radius: 14px;
@@ -276,15 +261,17 @@ a {
   min-width: 300px;
   box-shadow: var(--shadow);
   border-left: 6px solid var(--accent);
-  display: inline-block;
   transition: 0.25s;
+  display: inline-block;
 }
-.tree-node img{
-  display: block;
-  margin: 0 auto;
+
+.tree-node img {
   width: 200px;
   height: 200px;
+  display: block;
+  margin: 0 auto;
 }
+
 .tree-node:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0,0,0,.32);
@@ -295,38 +282,66 @@ a {
   font-size: 18px;
 }
 
-
 .tree-node p {
+  position: relative;
   color: var(--nama-anggota);
-  background-color: var(--bg-nama-anggota);
+  background: var(--bg-nama-anggota);
   border-radius: 10px;
   text-align: center;
-  display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;  
   height: 30px;
-  font-size: 14px;
-  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  z-index: 1;
 }
+
+/* Layer kedua sebagai bayangan */
+.tree-node p::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b4d4ea;
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0.9;
+
+  /* geser layer kedua, bukan layer pertama */
+  transform: translate(4px, 4px);
+}
+
+
+
 .struktur-grid {
-  margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  justify-items: center;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 25px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* matikan semua garis dari .tree */
-.tree,
-.tree * {
-  all: unset;
+@media (max-width: 900px) {
+  .struktur-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (max-width: 600px) {
+  .struktur-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Flower Anim */
 .flower {
   position: absolute;
   border-radius: 10px;
   opacity: 0;
-  transition: 0.5s ease;
+  transition: 0.5s;
   z-index: 1;
 }
 
@@ -349,3 +364,15 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.slide-wrapper.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-wrapper.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
