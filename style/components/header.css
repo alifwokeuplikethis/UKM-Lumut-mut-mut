@@ -5,7 +5,7 @@ header {
   margin-inline: auto;
   position: fixed;
   /* border: 1px solid red; */
-  padding: 20px 36px;
+  padding: 15px 36px;
   background-color: rgba(255, 255, 255, 0.548);
   top: 20px;
   left: 0;
@@ -23,23 +23,31 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 80px;
+  padding-inline: 30px;
+  /* margin-block: 10px; */
 }
 
-header nav h1 {
-  font-weight: 700;
-  font-size: 24px;
-}
-
-header nav h1 a {
-  text-decoration: none;
+.h1-logo {
+  font-weight: 600;
+  font-size: 18px;
   color: #000;
+  margin-left: 10px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+header nav img {
+  width: 60px;
 }
 
 header nav ul {
   display: flex;
   gap: 36px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -80,7 +88,7 @@ header nav ul li a:active {
     width: 95%;
     padding: 15px 20px;
     top: 10px;
-    border-radius: 20px;
+    border-radius: 50px;
   }
 
   header nav {
@@ -92,23 +100,21 @@ header nav ul li a:active {
   }
 
   header nav h1 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   /* Hamburger Menu Styles */
   .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    display: block;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     z-index: 100;
+    transition: transform 0.3s ease;
   }
 
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    transition: all 0.3s ease;
+  .hamburger.active {
+    transform: rotate(90deg);
   }
 
   /* Mobile Menu Styles */
@@ -133,22 +139,27 @@ header nav ul li a:active {
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
+.h1-logo {
+  font-size: 14px;
+  color: #000;
+  margin-left: 10px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+header nav img {
+  width: 25px;
+}
+
   header nav ul.active {
     display: flex;
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* Hamburger Animation when active */
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    margin-top: 1px;
+    border-radius: 20px;
   }
 }
