@@ -75,7 +75,7 @@ header nav ul li a:active {
 @media (max-width: 1024px) {
   header {
     width: 95%;
-    padding: 15px 24px;
+    /* padding: 15px 24px; */
   }
 
   header nav {
