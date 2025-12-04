@@ -12,6 +12,10 @@ footer {
   align-items: start;
 }
 
+.footer-links-wrapper {
+  display: contents;
+}
+
 .footer-content {
   width: 200px;
 }
@@ -164,7 +168,7 @@ footer {
 
   .nav-list {
     margin-left: 0;
-    width: auto; /* Allow natural width */
+    width: auto;
   }
 
   .nav-list ul li a {
@@ -173,7 +177,7 @@ footer {
 
   .sosmed-list {
     margin-right: 0;
-    width: auto; /* Allow natural width */
+    width: auto;
   }
 
   .sosmed-list ul li a {
