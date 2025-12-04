@@ -440,3 +440,55 @@ body {
     font-size: 28px;
   }
 }
+
+/* Gallery Section */
+.section-gallery {
+  padding-block: 60px;
+  padding-inline: 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-gallery h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #0d542b;
+}
+
+.gallery-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  /* animation: scroll 20s linear infinite; */ /* We will handle this with JS for pause on hover */
+}
+
+.gallery-track img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .section-gallery {
+    padding-inline: 20px;
+    padding-block: 40px;
+  }
+
+  .section-gallery h1 {
+    font-size: 28px;
+  }
+
+  .gallery-track img {
+    width: 200px;
+    height: 150px;
+  }
+}

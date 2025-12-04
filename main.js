@@ -65,4 +65,40 @@ document.addEventListener("DOMContentLoaded", async () => {
       carouselSlide.style.transform = "translateX(" + -100 * counter + "%)";
     });
   }
+
+  // Gallery Carousel Logic
+  const galleryTrack = document.querySelector(".gallery-track");
+  if (galleryTrack) {
+    let scrollAmount = 0;
+    const scrollSpeed = 1; // Adjust speed as needed
+    let isHovered = false;
+
+    // Clone images for infinite scroll effect
+    const galleryImages = galleryTrack.querySelectorAll("img");
+    galleryImages.forEach((img) => {
+      const clone = img.cloneNode(true);
+      galleryTrack.appendChild(clone);
+    });
+
+    function autoScroll() {
+      if (!isHovered) {
+        scrollAmount -= scrollSpeed;
+        if (Math.abs(scrollAmount) >= galleryTrack.scrollWidth / 2) {
+          scrollAmount = 0;
+        }
+        galleryTrack.style.transform = `translateX(${scrollAmount}px)`;
+      }
+      requestAnimationFrame(autoScroll);
+    }
+
+    galleryTrack.addEventListener("mouseenter", () => {
+      isHovered = true;
+    });
+
+    galleryTrack.addEventListener("mouseleave", () => {
+      isHovered = false;
+    });
+
+    autoScroll();
+  }
 });
