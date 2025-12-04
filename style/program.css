@@ -11,7 +11,7 @@ body {
 /* ==================== BANNER ==================== */
 .program-banner {
   width: 100%;
-  height: 600px;
+  height: 700px;
   background-image: url("/assets/program/Proker Depresi (Demo Apresiasi Seni).webp");
   background-size: cover;
   background-position: center;
@@ -96,7 +96,7 @@ body {
 /* FIX GAMBAR TERLALU TINGGI */
 .program-img {
   width: 100%;
-  height: 220px;        /* lebih pendek & konsisten */
+  height: 350px;        /* lebih pendek & konsisten */
   object-fit: cover;
   border-radius: 15px;
 }
@@ -168,7 +168,7 @@ body {
 
 .merch-card img {
   width: 100%;
-  height: 250px;        /* konsisten & rapi */
+  height: 250px;
   object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
