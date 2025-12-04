@@ -8,12 +8,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* BANNER */
+/* ==================== BANNER ==================== */
 .program-banner {
   width: 100%;
-  height: 600px;
-  margin-top: 150px;
-  background-image: url('/assets/program.png');
+  height: 700px;
+  background-image: url("/assets/program/Proker Depresi (Demo Apresiasi Seni).webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,17 +20,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
+}
+
+.program-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
 .program-banner-content {
   text-align: center;
   color: white;
   padding: 20px 40px;
-
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 15px;
+  z-index: 2;
 }
 
 .program-banner-content h1 {
@@ -45,83 +49,172 @@ body {
   margin: 0 auto;
 }
 
-/* Responsif */
+/* --- Responsive Banner --- */
 @media (max-width: 768px) {
   .program-banner {
     height: 350px;
   }
   .program-banner-content h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
   .program-banner-content p {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
+/* ==================== PROGRAM CARD ==================== */
+.program-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 0 120px;
+  margin-bottom: 50px;
+}
 
+.depresi-card {
+  grid-column: span 2;
+}
 
-/* CARD */
 .program-card {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   background: white;
   border: 2px solid #0d542b;
   border-radius: 20px;
   padding: 20px;
-  margin-bottom: 40px;
-  margin-left: 80px;
-  margin-right: 80px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-
-  transition: all 0.4s ease;       
+  transition: .3s ease;
   overflow: hidden;
-  max-height: 220px;               
   cursor: pointer;
 }
 
-/* HOVER → CARD EXPAND */
 .program-card:hover {
-  max-height: 520px;               
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
 }
 
-/* IMAGE */
+/* FIX GAMBAR TERLALU TINGGI */
 .program-img {
-  width: 280px;
-  height: 170px;
+  width: 100%;
+  height: 350px;        /* lebih pendek & konsisten */
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
-/* RIGHT CONTENT */
-.program-info {
-  flex: 1;
-}
-
-/* TITLE */
 .program-title {
-  margin: 10px 0 5px;
   font-size: 22px;
   font-weight: 700;
   color: #0d542b;
 }
 
 .desc {
-  margin-top: 10px;
   font-size: 14px;
-  color: #444;
   line-height: 1.5;
-
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateY(-10px);
-
-  transition: all 0.5s ease;
+  color: #444;
 }
 
-.program-card:hover .desc {
-  max-height: 500px;
-  opacity: 1;
-  transform: translateY(0);
+/* --- Responsive Program Cards --- */
+@media (max-width: 1024px) {
+  .program-section {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-section {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .depresi-card {
+    grid-column: span 1;
+  }
+
+  .program-img {
+    height: 180px;
+  }
+}
+
+/* ==================== MERCH SECTION ==================== */
+.program-merch {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* GRID 3 KOLOM */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CARD */
+.merch-card {
+  background: white;
+  border-radius: 16px;
+  border: 2px solid #0d542b;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: .3s ease;
+}
+
+.merch-card:hover {
+  transform: translateY(-8px);
+}
+
+.merch-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.merch-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.merch-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* WA Button */
+.wa-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.wa-btn:hover {
+  background: #1ebe5d;
+}
+
+/* --- Responsive Merch --- */
+@media (max-width: 900px) {
+  .merch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .merch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .merch-card img {
+    height: 220px;
+  }
 }

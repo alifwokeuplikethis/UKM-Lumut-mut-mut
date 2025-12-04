@@ -32,17 +32,8 @@ a {
   margin: 0 auto;
 }
 
-@media (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 600px) {
-  .cards-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+
 
 
 /* CARD */
@@ -55,7 +46,7 @@ a {
   height: 20em;
   width: 15em;
   font-size: 1.5em;
-  color: #4CAF50;
+  color: #2cda35;
   border-radius: 1em;
   padding: 1em;
   display: flex;
@@ -240,17 +231,16 @@ a {
   object-fit: cover;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .modal-body {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .modal-img img {
-    width: 100%;
-  }
+/* DESKTOP */
+.struktur-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
 }
+
 
 
 /* STRUKTUR PENGURUS */
@@ -258,19 +248,23 @@ a {
   background: var(--card);
   border-radius: 14px;
   padding: 14px;
-  min-width: 300px;
   box-shadow: var(--shadow);
   border-left: 6px solid var(--accent);
   transition: 0.25s;
-  display: inline-block;
+  display: flex;          /* FIX */
+  flex-direction: column; /* FIX */
+  align-items: center;    /* Biar rapi */
+  width: 100%;            /* FIX */
+  max-width: 300px;       /* ganti min-width */
 }
 
+
 .tree-node img {
-  width: 200px;
-  height: 200px;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
 }
+
 
 .tree-node:hover {
   transform: translateY(-6px);
@@ -284,57 +278,38 @@ a {
 
 .tree-node p {
   position: relative;
-  color: var(--nama-anggota);
-  background: var(--bg-nama-anggota);
-  border-radius: 10px;
-  text-align: center;
-  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1dcd43, #4CAF50);
+  border-radius: 12px;
+  padding: 6px 12px;
+  min-height: 35px;
+  width: 80%; /* sesuaikan lebar teks */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Layer kedua sebagai bayangan */
-.tree-node p::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #b4d4ea;
-  border-radius: 10px;
-  z-index: -1;
-  opacity: 0.9;
-
-  /* geser layer kedua, bukan layer pertama */
-  transform: translate(4px, 4px);
+/* efek hover */
+.tree-node p:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 
 
-.struktur-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 25px;
-  padding: 20px;
-  max-width: 1100px;
-  margin: auto;
-}
 
-@media (max-width: 900px) {
-  .struktur-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 600px) {
-  .struktur-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+
+
+
+
+
 
 /* Flower Anim */
 .flower {
@@ -343,6 +318,7 @@ a {
   opacity: 0;
   transition: 0.5s;
   z-index: 1;
+  bottom: 0;
 }
 
 .flower-left {
@@ -374,4 +350,127 @@ a {
 .slide-wrapper.slide-up.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* ====== DESKTOP BESAR ( >1200px ) ====== */
+@media (min-width: 1200px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+
+  .struktur-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+    .tree-node {
+    min-width: 280px;
+  }
+}
+
+/* ====== TABLET LANDSCAPE (900px–1199px) ====== */
+@media (max-width: 1199px) and (min-width: 901px) {
+  .card {
+    width: 14em;
+    height: 19em;
+  }
+
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    place-items: center;
+  }
+
+    .tree-node {
+    min-width: 240px;
+    padding: 12px;
+  }
+
+  .tree-node img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .struktur-grid {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+  .tree-node p{
+    font-size: 15px;
+  }
+}
+
+/* ====== TABLET PORTRAIT (600px–900px) ====== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .card {
+    width: 13em;
+    height: 18em;
+  }
+
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .tree-node {
+    min-width: 200px;
+    padding: 12px;
+  }
+
+  .tree-node img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .tree-node h3 {
+    font-size: 16px;
+  }
+
+
+  .struktur-grid {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+    .tree-node p{
+    font-size: 13px;
+  }
+}
+
+/* ====== HANDPHONE ( ≤600px ) ====== */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+    height: 18em;
+  }
+
+  .cards-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 40px 20px;
+    gap: 2rem;
+  }
+
+  .tree-node {
+    width: 100%;
+    min-width: unset;
+    padding: 16px;
+  }
+
+  .tree-node img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .tree-node h3 {
+    font-size: 15px;
+  }
+
+
+  .struktur-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    place-items: center;
+  }
+  .tree-node p{
+    font-size: 11px;
+  }
 }

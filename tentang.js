@@ -1,36 +1,45 @@
-const data = {
-    lukis: {
-        title: "Divisi Lukis",
-        desc: "Kegiatan berupa menggambar, melukis cat air, acrylic, mural, serta eksplorasi warna dan komposisi."
-    },
-    musik: {
-        title: "Divisi Musik",
-        desc: "Fokus pada vokal, alat musik, band, aransemen, hingga pelatihan dasar teori musik."
-    },
-    tari: {
-        title: "Divisi Tari",
-        desc: "Melatih gerak, teknik dasar, koreografi, dan berbagai gaya tari tradisional maupun modern."
+/* ================================================================
+   ELEMEN
+   ================================================================ */
+const divisiCards = document.querySelectorAll('.divisi-card'); 
+const closeButtons = document.querySelectorAll('.close-btn');  
+
+/* ================================================================
+   PERINTAH: MEMBUKA SAAT DI KLIK
+   ================================================================ */
+divisiCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const modalId = card.dataset.modal;        
+    const modal = document.getElementById(modalId);
+
+    if (modal) {
+      modal.classList.add('active');           
+      document.body.style.overflow = 'hidden'; 
     }
-};
-
-const cards = document.querySelectorAll('.card');
-const modal = document.getElementById('modal');
-const modalTitle = document.getElementById('modal-title');
-const modalDesc = document.getElementById('modal-desc');
-const closeBtn = document.querySelector('.close');
-
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        const key = card.getAttribute('data-target');
-        modalTitle.textContent = data[key].title;
-        modalDesc.textContent = data[key].desc;
-
-        modal.style.display = 'flex';
-    });
+  });
 });
 
-closeBtn.onclick = () => modal.style.display = 'none';
+/* ================================================================
+   PERINTAH: TOMBOL CLOSE (X) UNTUK MENUTUP
+   ================================================================ */
+closeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modalId = btn.dataset.close;         
+    const modal = document.getElementById(modalId);
 
-window.onclick = e => {
-    if(e.target === modal) modal.style.display = 'none';
-};
+    if (modal) {
+      modal.classList.remove('active');       
+      document.body.style.overflow = 'auto';   
+    }
+  });
+});
+
+/* ================================================================
+   PERINTAH: MENUTUP MODAL SAAT AREA LUAR KOTAK DIKLIK
+   ================================================================ */
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')) {
+    event.target.classList.remove('active');   
+    document.body.style.overflow = 'auto';     
+  }
+});

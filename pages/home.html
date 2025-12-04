@@ -11,25 +11,35 @@
     <title>Document</title>
   </head>
 
+  <!-- Header -->
+
   <body>
     <div id="header"></div>
+
+    <!-- Hero section 1 -->
 
     <div class="hero">
       <div class="hero-h1">
         <h1>Welcome to UKM Lumut</h1>
         <p>Seni adalah hidupku-hidupku adalah seni</p>
+        <button class="btn-hero">
+          <a href="#section-hero">Jelajahi</a>
+        </button>
       </div>
     </div>
 
-    <div class="section-hero">
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <img src="/assets/dance-1.png" alt="Dance" />
-          <img src="/assets/lukis-1.png" alt="Lukis" />
-          <img src="/assets/lukis-1.png" alt="Lukis" />
-        </div>
-        <button id="prevBtn" class="carousel-btn prev-btn">&#10094;</button>
-        <button id="nextBtn" class="carousel-btn next-btn">&#10095;</button>
+    <!-- Section 2 -->
+
+    <div id="section-hero" class="section-hero">
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/5-vscdf0Zcw?si=6_Tz3ghDPpT79HJ1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
       <div class="hero-h2">
         <h1>What is UKM Lumut</h1>
@@ -42,42 +52,28 @@
       </div>
     </div>
 
+    <!-- Section 3 -->
+
     <div class="section-divisions">
       <h1>Divisi Kami</h1>
       <div class="divisions-container">
         <div class="division-card">
-          <img src="/assets/art.jpg" alt="Seni Rupa" />
+          <img src="/assets/lukis-1.png" alt="Seni Rupa" />
           <h3>Lukis</h3>
-          <p>Melukis, menggambar, dan kriya.</p>
+          <p>Melukis, menggambar.</p>
         </div>
         <div class="division-card">
-          <img src="/assets/art.jpg" alt="Seni Musik" />
+          <img src="/assets/dance-1.png" alt="Seni Musik" />
           <h3>Musik</h3>
           <p>Vokal, instrumen, dan band.</p>
         </div>
         <div class="division-card">
-          <img src="/assets/art.jpg" alt="Seni Tari" />
+          <img src="/assets/Depresi.jpg" alt="Seni Tari" />
           <h3>Tari</h3>
           <p>Tari tradisional dan modern.</p>
         </div>
       </div>
     </div>
-
-    <section class="section-3">
-      <div>
-        <h1>PRESTASI</h1>
-      </div>
-    </section>
-
-    <!-- <div class="section-join">
-      <div class="join-content">
-        <h1>Bergabunglah Bersama Kami!</h1>
-        <p>
-          Salurkan bakat senimu dan berkarya bersama keluarga besar UKM Lumut.
-        </p>
-        <button class="btn-join">Daftar Sekarang</button>
-      </div>
-    </div> -->
 
     <div id="footer"></div>
     <script src="/main.js"></script>

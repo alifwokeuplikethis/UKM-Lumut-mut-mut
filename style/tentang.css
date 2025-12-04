@@ -1,5 +1,376 @@
+/* DEFAULT */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Section default padding */
+section {
+  width: 100%;
+  padding: 100px 80px 60px;
+}
+
+.section-title {
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* GEDE GILA */
+.hero {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: 2;
+  filter: brightness(0.5);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: clamp(40px, 10vw, 150px);
+  font-weight: 750;
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 2.5vw, 32px);
+  margin-top: 10px;
+  line-height: 1.3;
+}
+
+/* OUR HISTORY */
+.history-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.history-content {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.history-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #003D3B;
+}
+
+.history-text {
+  margin-left: clamp(40px, 15vw, 350px);
+  max-width: 800px;
+  text-align: justify;
+}
+
+.history-text p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-size: clamp(16px, 1.4vw, 18px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history-text {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+/* DIVISI CARD */
+.divisi-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 6%;
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.divisi-card {
+  text-align: center;
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  width: 220px;
+  border-radius: 10px;
+}
+
+.divisi-card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 16px;
+  filter: brightness(0.5);
+  border-radius: 10px;
+}
+
+.divisi-card h3 {
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  color: #003D3B;
+}
+
+.divisi-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+  .divisi-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 40px 6%;
+  }
+
+  .divisi-card {
+    margin-bottom: 160px;
+    transform: translateY(0) !important;
+    width: 80%;
+    max-width: 360px;
+  }
+
+  .divisi-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+}
+
+/* POP UP */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 300;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 700px;
+  height: 75vh;
+  max-height: 500px;
+  display: flex;
+  overflow: visible;
+  position: relative;
+}
+
+.collage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+/* RIBET */
+.img-a,
+.img-b,
+.img-c,
+.img-d {
+  position: absolute;
+  object-fit: cover;
+  z-index: 2;
+  filter: brightness(0.5);
+  transition: transform 0.3s ease, box-shadow 0.35s ease;
+}
+
+.img-a { width: 62%; height: 60%; top: -10%; left: 0; }
+.img-b { width: 60%; height: 50%; bottom: 0; left: -20%; }
+.img-c { width: 38%; height: 50%; top: 0; right: 0; }
+.img-d { width: 60%; height: 60%; bottom: -10%; right: 0; }
+
+.img-a:hover,
+.img-d:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+}
+
+.img-b:hover { transform: translateX(-12px) scale(1.02); box-shadow: 0 18px 36px rgba(0,0,0,0.12); }
+.img-c:hover { transform: translateX(12px) scale(1.02); box-shadow: 0 18px 36px rgba(0,0,0,0.12); }
+
+.modal-side {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-btn:hover { color: #003D3B; }
+
+.vertical-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #003D3B;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .modal-box {
+    width: 95%;
+    max-width: 380px;
+    height: 70vh;
+    max-height: 420px;
+    transform: scale(0.9);
+  }
+
+  .collage {
+    width: 65%;
+    min-width: 86%;
+  }
+
+  .vertical-title {
+    font-size: 28px;
+  }
+
+  .close-btn {
+    font-size: 28px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* VISI MISI */
+.vm-section {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.vm-content {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vm-title,
+.mission-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #003D3B;
+}
+
+.vm-text {
+  margin-left: clamp(40px, 15vw, 350px);
+  max-width: 800px;
+  text-align: justify;
+}
+
+.vm-text p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+  font-size: 20px;
+}
+
+.mission-custom {
+  width: 100%;
+  margin: 80px auto;
+  max-width: 1200px;
+}
+
+.mission-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin: 70px 0;
+  width: 70%;
+}
+
+.mission-row.left  { margin-left: 0; }
+.mission-row.right { margin-left: auto; }
+
+.mission-row span {
+  font-size: 70px;
+  font-weight: 900;
+  color: #003D3B;
+  line-height:1;
+}
+
+.mission-row p {
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.mission-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mission-image img {
+  margin-top: 80px;
+  width: 100%;
+  max-width: 1300px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+@media (max-width: 768px) {
+  .vm-text,
+  .mission-row {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .mission-image img {
+    height: 140px;
+  }
 }
