@@ -463,7 +463,10 @@ body {
   /* Adjust grid for mobile to allow smaller cards */
   .divisions-container,
   .products-container {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Reduced min-width */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(140px, 1fr)
+    ); /* Reduced min-width */
     gap: 15px; /* Reduced gap */
   }
 
