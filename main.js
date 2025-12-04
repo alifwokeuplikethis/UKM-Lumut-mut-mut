@@ -5,9 +5,6 @@ async function loadComponent(id, file) {
   element.innerHTML = html;
 }
 
-loadComponent("header", "/components/header.html");
-loadComponent("footer", "/components/footer.html");
-
 document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
     loadComponent("header", "/components/header.html"),
