@@ -473,4 +473,9 @@ a {
   .tree-node p{
     font-size: 11px;
   }
+    .modal-img img {
+    width: 100%;                 /* full lebar HP */
+    max-width: 600px;            /* biar tetap proporsional */
+    border-radius: 5px;
+  }
 }
