@@ -1,14 +1,19 @@
 footer {
   font-family: "Poppins", sans-serif;
-  height: 350px;
   background-color: #032e15;
   color: white;
-  padding-block: 100px;
+}
+
+.footer-top {
+  padding-block: 80px;
   padding-inline: 112px;
   display: flex;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-content: space-between;
   align-items: start;
+}
+
+.footer-links-wrapper {
+  display: contents;
 }
 
 .footer-content {
@@ -16,7 +21,7 @@ footer {
 }
 
 .footer-content iframe {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .footer-content h1 {
@@ -30,26 +35,25 @@ footer {
 }
 
 .hubungi-kami h3 {
-    font-size: 18px;
-    padding-bottom: 12px;
-    font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 12px;
+  font-weight: 600;
 }
-
 
 .hubungi-kami-content img {
   width: 25px;
 }
 
 .hubungi-kami-content {
-    display: flex;
-    padding-block: 5px;
-    gap: 12px;
-    align-items: center;
-    width: 300px;
+  display: flex;
+  padding-block: 5px;
+  gap: 12px;
+  align-items: center;
+  width: 300px;
 }
 
 .hubungi-kami-content p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .nav-list ul {
@@ -58,7 +62,6 @@ footer {
   list-style: none;
   gap: 12px;
 }
-
 
 .nav-list ul li a {
   text-decoration: none;
@@ -100,16 +103,16 @@ footer {
 }
 
 .footer-bottom {
-    padding: 20px;
-    /* border: 1px solid red; */
-    text-align: center;
-    font-size: 16px;
-    color: white;
-    background-color: #032e15;
+  padding: 20px;
+  /* border: 1px solid red; */
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  background-color: #032e15;
 }
 
 @media (max-width: 1024px) {
-  footer {
+  .footer-top {
     padding-inline: 40px;
     padding-block: 60px;
   }
@@ -128,9 +131,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-  footer {
+  .footer-top {
     flex-direction: column;
-    height: auto;
     padding-inline: 20px;
     padding-block: 50px;
     gap: 40px;
@@ -157,9 +159,16 @@ footer {
     font-size: 14px;
   }
 
+  .footer-links-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+  }
+
   .nav-list {
     margin-left: 0;
-    width: 100%;
+    width: auto;
   }
 
   .nav-list ul li a {
@@ -168,7 +177,7 @@ footer {
 
   .sosmed-list {
     margin-right: 0;
-    width: 100%;
+    width: auto;
   }
 
   .sosmed-list ul li a {
