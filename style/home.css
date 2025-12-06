@@ -446,6 +446,22 @@ body {
   font-size: 14px;
 }
 
+/* WA Button */
+.wa-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.wa-btn:hover {
+  background: #1ebe5d;
+}
+
 @media (max-width: 768px) {
   .section-divisions,
   .section-join,
